@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-11T12:43:18.224Z</updated>
+  <updated>2018-02-11T14:03:59.813Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git常用命令</title>
+    <link href="http://yoursite.com/2018/02/11/git/"/>
+    <id>http://yoursite.com/2018/02/11/git/</id>
+    <published>2018-02-11T13:46:43.000Z</published>
+    <updated>2018-02-11T14:03:59.813Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Git有两种模式"><a href="#Git有两种模式" class="headerlink" title="Git有两种模式"></a>Git有两种模式</h1><blockquote><p>整理下原来的笔记</p></blockquote><h3 id="gui-图形化界面"><a href="#gui-图形化界面" class="headerlink" title="gui 图形化界面"></a>gui 图形化界面</h3><h3 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h3><p><hr></p><h3 id="主要写一些控制台的指令"><a href="#主要写一些控制台的指令" class="headerlink" title="主要写一些控制台的指令"></a>主要写一些控制台的指令</h3><pre><code>--* 添加    git add readme.txt* 提交    git commit -m &quot;解释提交的说明&quot;* 查看状态    git status* 查看不同点  git diff readme.txt//  --graph   获取简单的图形        --pretty=oneline  每个提交放在一行显示//   –abbrev-commit — 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。* 查看历史版本   git log  / git log --pretty=oneline* 回退  git reset --hard HEAD ^ 或者 hard HEAD~1【如果回前两个就写2】* 回退  git reset --hard 1322342【这是版本id前几位，它会自动匹配】* 显示操作的记录   git reflog</code></pre><h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><pre><code>add 只是把内容放到一个暂存区，commit只是把暂存区的内容提交到分支中而工作区的内容是不管的# 当你没有commit ,但已经修改了情况下  git checkout --  readme.txt回退（撤销更改回退到暂存区或者版本库的状态）#优先暂存区，如果暂存区是空的，就会回退到版本库的状态 1. 有add       1. git checkout --  readme.txt 把暂存区的内容清空     2. git checkout --  readme.txt2. 没有add      1. git checkout --  readme.txt3. 删除也是一种修改操作，同上</code></pre><h3 id="添加远程仓库和克隆远程仓库"><a href="#添加远程仓库和克隆远程仓库" class="headerlink" title="添加远程仓库和克隆远程仓库"></a>添加远程仓库和克隆远程仓库</h3><pre><code>* 添加    * $ git remote add origin git@github.com:wuguodong/learngit.git【origin自己命名】    * $ git push -u origin master* 远程克隆    * $ git clone git@github.com:wuguodong/learngit.git* 查看远程库信息  ： git remote -v* 从本地推送分支  ； git push orgin【仓库名称】 branch-name【分支名称】* 在本地创建与远程对应的分支 ： git checkout -b branch-name origin/branch-name* 当你本地有分支，但是没有与远程的分支管理的时候，进行关联：     * git branch --set-upstream branch-name origin/branch-name* 从远程抓取  git pull</code></pre><h3 id="分支整理"><a href="#分支整理" class="headerlink" title="分支整理"></a>分支整理</h3><pre><code>* 查看分支  ： git branch* 创建分支  ： git branch &lt;name&gt;* 切换分支  ： git checkout &lt;name&gt;* 创建+切换分支：git checkout -b &lt;name&gt;* 合并某分支到当前分支 : git merge &lt;name&gt;  //快速合并* 合并某分支到当前分支 : git merge --no-ff -m &quot;解释说明&quot; &lt;name&gt;  //普通合并* 删除分支 :   git branch -d &lt;name&gt;* 强行删除分支(没有合并)： git branch -D &lt;name&gt;</code></pre><h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3><pre><code>在自己的分支没有完成的时候，需要去修复master上的bug，则可以先把自己的分支存起来，然后切换到master去修复* 存储未完成的内容 : git stash* 查看存储的内容   : git stash list* 恢复存储的内容    * git stash apply                   //获取stash    * git stash apply stash@{0}          //获取指定的stash    * git stash pop                     //获取stash 并删除存储内容* 删除存储的内容   : git stash  drop     //删除存储内容</code></pre><h3 id="hexo的基本操作"><a href="#hexo的基本操作" class="headerlink" title="hexo的基本操作"></a>hexo的基本操作</h3><pre><code>* 新建文章  : $ hexo new [layout] &lt;title&gt;  // $ hexo new post &quot;dd&quot;* 提交文章  : $ hexo  g* 本地运行  : $ hexo  s* 提交 : $ hexo d* 清理 : $ hexo clean</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Git有两种模式&quot;&gt;&lt;a href=&quot;#Git有两种模式&quot; class=&quot;headerlink&quot; title=&quot;Git有两种模式&quot;&gt;&lt;/a&gt;Git有两种模式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;整理下原来的笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>vps+ss实现翻墙</title>

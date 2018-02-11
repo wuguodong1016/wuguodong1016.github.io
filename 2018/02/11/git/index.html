@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>
         
-        Wgd Blog
+        git常用命令 · Wgd Blog
         
     </title>
     <link rel="icon" href= /assets/favicon.ico>
@@ -58,6 +58,8 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
@@ -65,27 +67,71 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Wgd Blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">git常用命令</a>
+            </div>
+    </div>
+    
     <a class="home-link" href=/>Wgd Blog</a>
 </header>
     <div class="wrapper">
         <div class="site-intro">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/image/road.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            git常用命令
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+                <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = git>git</a>
+    
+</div>
+            
+            <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/02/11</span>
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe604;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">
+                        &#xe601;
+                    </span>
+                    <span class="bdsharebuttonbox">
+                        <a href="#" class="bds_more shareText" data-cmd="more">Share</a>
+                    </span>
+                </span>
+            </div>
         
     </div>
 </div>
@@ -153,80 +199,114 @@
             }
         </script>
         <div class="container container-unloaded">
-            <main class="main index-page">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Git有两种模式"><a href="#Git有两种模式" class="headerlink" title="Git有两种模式"></a>Git有两种模式</h1><blockquote>
+<p>整理下原来的笔记</p>
+</blockquote>
+<h3 id="gui-图形化界面"><a href="#gui-图形化界面" class="headerlink" title="gui 图形化界面"></a>gui 图形化界面</h3><h3 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h3><p><hr></p>
+<h3 id="主要写一些控制台的指令"><a href="#主要写一些控制台的指令" class="headerlink" title="主要写一些控制台的指令"></a>主要写一些控制台的指令</h3><pre><code>--
+* 添加    git add readme.txt
+* 提交    git commit -m &quot;解释提交的说明&quot;
+* 查看状态    git status
+* 查看不同点  git diff readme.txt
+
+//  --graph   获取简单的图形        --pretty=oneline  每个提交放在一行显示
+//   –abbrev-commit — 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。
+
+* 查看历史版本   git log  / git log --pretty=oneline
+* 回退  git reset --hard HEAD ^ 或者 hard HEAD~1【如果回前两个就写2】
+* 回退  git reset --hard 1322342【这是版本id前几位，它会自动匹配】
+* 显示操作的记录   git reflog
+</code></pre><h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><pre><code>add 只是把内容放到一个暂存区，commit只是把暂存区的内容提交到分支中而工作区的内容是不管的
+
+# 当你没有commit ,但已经修改了情况下
+  git checkout --  readme.txt回退（撤销更改回退到暂存区或者版本库的状态）
+#优先暂存区，如果暂存区是空的，就会回退到版本库的状态 
+
+1. 有add   
+    1. git checkout --  readme.txt 把暂存区的内容清空 
+    2. git checkout --  readme.txt
+2. 没有add  
+    1. git checkout --  readme.txt
+3. 删除也是一种修改操作，同上
+</code></pre><h3 id="添加远程仓库和克隆远程仓库"><a href="#添加远程仓库和克隆远程仓库" class="headerlink" title="添加远程仓库和克隆远程仓库"></a>添加远程仓库和克隆远程仓库</h3><pre><code>* 添加
+
+    * $ git remote add origin git@github.com:wuguodong/learngit.git【origin自己命名】
+    * $ git push -u origin master
+* 远程克隆
+    * $ git clone git@github.com:wuguodong/learngit.git
+
+
+* 查看远程库信息  ： git remote -v
+* 从本地推送分支  ； git push orgin【仓库名称】 branch-name【分支名称】
+* 在本地创建与远程对应的分支 ： git checkout -b branch-name origin/branch-name
+* 当你本地有分支，但是没有与远程的分支管理的时候，进行关联： 
+    * git branch --set-upstream branch-name origin/branch-name
+* 从远程抓取  git pull
+</code></pre><h3 id="分支整理"><a href="#分支整理" class="headerlink" title="分支整理"></a>分支整理</h3><pre><code>* 查看分支  ： git branch
+* 创建分支  ： git branch &lt;name&gt;
+* 切换分支  ： git checkout &lt;name&gt;
+* 创建+切换分支：git checkout -b &lt;name&gt;
+* 合并某分支到当前分支 : git merge &lt;name&gt;  //快速合并
+* 合并某分支到当前分支 : git merge --no-ff -m &quot;解释说明&quot; &lt;name&gt;  //普通合并
+* 删除分支 :   git branch -d &lt;name&gt;
+* 强行删除分支(没有合并)： git branch -D &lt;name&gt;
+</code></pre><h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3><pre><code>在自己的分支没有完成的时候，需要去修复master上的bug，则可以先把自己的分支存起来，然后切换到master去修复
+* 存储未完成的内容 : git stash
+* 查看存储的内容   : git stash list
+* 恢复存储的内容
+    * git stash apply                   //获取stash
+    * git stash apply stash@{0}          //获取指定的stash
+    * git stash pop                     //获取stash 并删除存储内容
+* 删除存储的内容   : git stash  drop     //删除存储内容
+</code></pre><h3 id="hexo的基本操作"><a href="#hexo的基本操作" class="headerlink" title="hexo的基本操作"></a>hexo的基本操作</h3><pre><code>* 新建文章  : $ hexo new [layout] &lt;title&gt;  // $ hexo new post &quot;dd&quot;
+* 提交文章  : $ hexo  g
+* 本地运行  : $ hexo  s
+* 提交 : $ hexo d
+* 清理 : $ hexo clean
+</code></pre>
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+        
+            <li class="previous">
+                <a href= "/2018/02/11/chicken/" title= vps+ss实现翻墙 >
+                    <span>Previous Post</span>
+                    <span>vps+ss实现翻墙</span>
+                </a>
+            </li>
+        
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zMzcxMS8xMDI2Ng==>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
     
+    <!--PC版-->
+
+    <!--PC版-->
+
+
     
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/31/movie/" >
-                
-                    <span>免费的看电影资源</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/31/movie/" >
-                <div class="abstract-content">
-                    发现一个很好的电影网站分享
-转载自 吾勇士的博客 详情可点击
-
-简单的排列下，做个标记
-
-
-名称
-路径
-
-
-
-
-在线之家
-http://www.1993s.top/
-
-
-看看屋
-https://www.kankanwu.com/
-
-
-暖光影视
-http://v.sunbook.cc/
-
-
-哈哩哈哩
-http://www.halihali.tv/
-
-
-q2电影
-http://www.q2002.com/
-
-
-最新福利
-http://www.wz80.com/
-
-
-94神马电影
-http://www.9rsm.com/
-
-
-
-看看我的蛙 :smile:
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = movie>movie</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/31</span>
-                </div>
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -284,6 +364,13 @@ http://www.9rsm.com/
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git有两种模式"><span class="toc-number">1.</span> <span class="toc-text">Git有两种模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gui-图形化界面"><span class="toc-number">1.0.1.</span> <span class="toc-text">gui 图形化界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制台"><span class="toc-number">1.0.2.</span> <span class="toc-text">控制台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要写一些控制台的指令"><span class="toc-number">1.0.3.</span> <span class="toc-text">主要写一些控制台的指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add"><span class="toc-number">1.0.4.</span> <span class="toc-text">add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加远程仓库和克隆远程仓库"><span class="toc-number">1.0.5.</span> <span class="toc-text">添加远程仓库和克隆远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支整理"><span class="toc-number">1.0.6.</span> <span class="toc-text">分支整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bug分支"><span class="toc-number">1.0.7.</span> <span class="toc-text">bug分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo的基本操作"><span class="toc-number">1.0.8.</span> <span class="toc-text">hexo的基本操作</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top">&#xe639;</div>
     <div class="sidebar">
