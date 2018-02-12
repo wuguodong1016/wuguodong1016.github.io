@@ -202,7 +202,7 @@
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="vps的简单搭建（2-5-monthly）"><a href="#vps的简单搭建（2-5-monthly）" class="headerlink" title="vps的简单搭建（2.5$monthly）"></a>vps的简单搭建（2.5$monthly）</h1><blockquote>
-<p>自从建了博客以后就很久没有写了，😅。现在想写都快把语法给忘完了</p>
+<p>翻墙的必要性：<br>有时候经常会想：<font style="color: red">我是谁，我在哪，我该干什么</font><br>这时候，就需要用google找找答案了😄</p>
 </blockquote>
 <p><img src="/2018/02/11/chicken/chicken.jpg" alt="log"></p>
 <p></p><p><br>　　一直想翻个墙，但是奈何找不到代理服务器，听说蓝灯很好用但是我下了也上不了网。还好姚大仙说买个vps自己搭个也很快，所以我也自己学着搭了个。<br><br>　　想想很麻烦，但是其实跟着教程走，一下子就搭好了，虽然有点不明所以。<br></p><br>————比较麻烦的是<p></p>
@@ -238,7 +238,7 @@
 </li>
 </ul>
 </li>
-<li><p>安装教程说的，用户限流：当超过流量的时候，会把帐号密码删除，所以帐号就无效了<br><br>当 <font style="color: green">bsp -r</font> 的时候,就会对限流账户初始化，并重新添加密码[又能正常使用了]<br></p><br><hr><br><hr><p></p>
+<li><p>用户限流：当超过流量的时候，会把帐号密码删除，所以帐号就无效了<br><br>当 <font style="color: green">bsp -r</font> 的时候,就会对限流账户初始化，并重新添加密码[又能正常使用了]<br></p><br><hr><br><hr><p></p>
 <h2 id="对于已经装过的-就直接复制粘贴代码吧"><a href="#对于已经装过的-就直接复制粘贴代码吧" class="headerlink" title="对于已经装过的,就直接复制粘贴代码吧"></a>对于已经装过的,就直接复制粘贴代码吧</h2></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">- 安装ss</span><br><span class="line">　<span class="number">1.</span> wget --no-check-certificate -O shadowsocks-all.sh https:<span class="comment">//raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</span></span><br><span class="line">　<span class="number">2.</span> chmod +x shadowsocks-all.sh</span><br><span class="line">　<span class="number">3.</span> ./shadowsocks-all.sh <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks-all.log</span><br><span class="line">　<span class="number">4.</span> 配置多个用户端口</span><br><span class="line">  　- 在/etc/shadowsocks-python/config.json 把端口和密码删除，换上如下</span><br><span class="line">  　- vi config.json 修改</span><br><span class="line">  　- 按 i 进行编辑</span><br><span class="line">  　-<span class="string">"port_password"</span>: &#123;</span><br><span class="line">      　<span class="string">"899565"</span>: <span class="string">"sd4asdwe"</span>,</span><br><span class="line">      　<span class="string">"14415"</span>: <span class="string">"45dasd4"</span>,</span><br><span class="line">      　<span class="string">"18745"</span>: <span class="string">"45dfgsd"</span></span><br><span class="line">  　　  &#125;,</span><br><span class="line">	- 完成后按 esc 退出编辑，然后输入 ：wq 保存的意思</span><br><span class="line">　<span class="number">6.</span> 需要/etc/init.d/shadowsocks-python restart 重启</span><br><span class="line">　<span class="number">7.</span> 开防火墙</span><br><span class="line">- bsp安装</span><br><span class="line">　<span class="number">1.</span> git clone https:<span class="comment">//github.com/edboffical/bsp.git</span></span><br><span class="line">　<span class="number">2.</span> cd bsp</span><br><span class="line">　<span class="number">3.</span> chmod <span class="number">775</span> install</span><br><span class="line">　<span class="number">4.</span> ./install</span><br><span class="line">--bsp操作</span><br><span class="line">　<span class="number">1.</span> 添加</span><br><span class="line">	<span class="number">1.</span> bsp -p <span class="number">8989</span> -P <span class="number">123456</span> -s <span class="number">100</span> -a -A -j</span><br><span class="line">　<span class="number">2.</span> 删除</span><br><span class="line">	<span class="number">1.</span> bsp -p <span class="number">8989</span> -d -D -R</span><br><span class="line">　<span class="number">3.</span> 启动 （一次就够了）</span><br><span class="line">	<span class="number">1.</span> bsp --start</span><br><span class="line">- 这是以后的操作</span><br><span class="line">　<span class="number">4.</span> 初始化</span><br><span class="line">	<span class="number">1.</span> bsp -r</span><br><span class="line">　<span class="number">5.</span> 查看流量使用情况</span><br><span class="line">	<span class="number">1.</span> bsp -p <span class="number">8989</span> -c</span><br></pre></td></tr></table></figure>
@@ -259,9 +259,9 @@
         
         
             <li class="previous">
-                <a href= "/2018/01/31/movie/" title= 免费的看电影资源 >
+                <a href= "/2018/01/31/movie/" title= 电视剧网址 >
                     <span>Previous Post</span>
-                    <span>免费的看电影资源</span>
+                    <span>电视剧网址</span>
                 </a>
             </li>
         
@@ -430,7 +430,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2018/01/31/movie/" >免费的看电影资源</a>
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2018/01/31/movie/" >电视剧网址</a>
         </li>
     
     
