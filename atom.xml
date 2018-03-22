@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-01T15:30:00.549Z</updated>
+  <updated>2018-03-22T14:53:34.898Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>alive</title>
+    <link href="http://yoursite.com/2018/03/22/alive/"/>
+    <id>http://yoursite.com/2018/03/22/alive/</id>
+    <published>2018-03-22T14:08:25.000Z</published>
+    <updated>2018-03-22T14:53:34.898Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="对生活的迷惘，可以看看这个漫画"><a href="#对生活的迷惘，可以看看这个漫画" class="headerlink" title="对生活的迷惘，可以看看这个漫画"></a>对生活的迷惘，可以看看这个漫画</h1><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=391249&auto=1&height=32"></iframe></p><blockquote><p>做自己的选择，坚决不喝他人鸡汤😄</p></blockquote><p><img src="/2018/03/22/alive/alive.jpg" alt="log"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;对生活的迷惘，可以看看这个漫画&quot;&gt;&lt;a href=&quot;#对生活的迷惘，可以看看这个漫画&quot; class=&quot;headerlink&quot; title=&quot;对生活的迷惘，可以看看这个漫画&quot;&gt;&lt;/a&gt;对生活的迷惘，可以看看这个漫画&lt;/h1&gt;&lt;p&gt;&lt;iframe frameborde
+      
+    
+    </summary>
+    
+    
+      <category term="live" scheme="http://yoursite.com/tags/live/"/>
+    
+  </entry>
   
   <entry>
     <title>git常用命令</title>
