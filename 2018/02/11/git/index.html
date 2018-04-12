@@ -223,6 +223,7 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* 存储未完成的内容 : git stash</span><br><span class="line">* 查看存储的内容   : git stash list</span><br><span class="line">* 恢复存储的内容</span><br><span class="line">    * git stash apply                   //获取stash</span><br><span class="line">    * git stash apply stash@&#123;0&#125;		//获取指定的stash</span><br><span class="line">    * git stash pop                     //获取stash 并删除存储内容</span><br><span class="line">* 删除存储的内容   : git stash  drop     //删除存储内容</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
+<h3 id="git切换版本"><a href="#git切换版本" class="headerlink" title="git切换版本"></a>git切换版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ 获取历史版本  git log</span><br><span class="line">+ 切换到该版本  git checkout &#123;key&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="hexo的基本操作"><a href="#hexo的基本操作" class="headerlink" title="hexo的基本操作"></a>hexo的基本操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* 新建文章  : $ hexo new [layout] &lt;title&gt;  // $ hexo new post &quot;dd&quot;</span><br><span class="line">* 提交文章  : $ hexo  g</span><br><span class="line">* 本地运行  : $ hexo  s</span><br><span class="line">* 提交 : $ hexo d</span><br><span class="line">* 清理 : $ hexo clean</span><br></pre></td></tr></table></figure>
 
     </article>
@@ -335,7 +336,7 @@
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git有两种模式"><span class="toc-number">1.</span> <span class="toc-text">Git有两种模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gui-图形化界面"><span class="toc-number">1.0.1.</span> <span class="toc-text">gui 图形化界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制台"><span class="toc-number">1.0.2.</span> <span class="toc-text">控制台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要写一些控制台的指令"><span class="toc-number">1.0.3.</span> <span class="toc-text">主要写一些控制台的指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add"><span class="toc-number">1.0.4.</span> <span class="toc-text">add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加远程仓库和克隆远程仓库"><span class="toc-number">1.0.5.</span> <span class="toc-text">添加远程仓库和克隆远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支整理"><span class="toc-number">1.0.6.</span> <span class="toc-text">分支整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bug分支"><span class="toc-number">1.0.7.</span> <span class="toc-text">bug分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo的基本操作"><span class="toc-number">1.0.8.</span> <span class="toc-text">hexo的基本操作</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git有两种模式"><span class="toc-number">1.</span> <span class="toc-text">Git有两种模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gui-图形化界面"><span class="toc-number">1.0.1.</span> <span class="toc-text">gui 图形化界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制台"><span class="toc-number">1.0.2.</span> <span class="toc-text">控制台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要写一些控制台的指令"><span class="toc-number">1.0.3.</span> <span class="toc-text">主要写一些控制台的指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add"><span class="toc-number">1.0.4.</span> <span class="toc-text">add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加远程仓库和克隆远程仓库"><span class="toc-number">1.0.5.</span> <span class="toc-text">添加远程仓库和克隆远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支整理"><span class="toc-number">1.0.6.</span> <span class="toc-text">分支整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bug分支"><span class="toc-number">1.0.7.</span> <span class="toc-text">bug分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git切换版本"><span class="toc-number">1.0.8.</span> <span class="toc-text">git切换版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo的基本操作"><span class="toc-number">1.0.9.</span> <span class="toc-text">hexo的基本操作</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top">&#xe639;</div>
@@ -349,8 +350,6 @@
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-archive">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -440,11 +439,11 @@
         <div class="sidebar-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name"><a href= "#">life</a></span>
+        <span class="sidebar-tag-name"><a href= "#">movie</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">vps</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">movie</a></span>
+        <span class="sidebar-tag-name"><a href= "#">life</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">live</a></span>
     
